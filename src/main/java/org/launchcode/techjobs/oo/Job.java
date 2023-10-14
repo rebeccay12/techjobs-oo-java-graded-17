@@ -1,7 +1,7 @@
 package org.launchcode.techjobs.oo;
+import java.util.UUID;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class Job {
 
@@ -19,11 +19,15 @@ public class Job {
     //  the 'id' field.
 
     public Job() {
-        this.id = Integer.parseInt(UUID.randomUUID().toString());
+        this.id = generateUniqueID();
 
-        public Integer getId() {
-            return id;
-        }
+        //private Integer id;
+
+//        public void setId(Integer id) {
+//            this.id = Integer.parseInt(UUID.randomUUID().toString());
+//
+//        }
+
     }
 
     public Job(String name, String employer, String location, String positionType, String coreCompetency) {
