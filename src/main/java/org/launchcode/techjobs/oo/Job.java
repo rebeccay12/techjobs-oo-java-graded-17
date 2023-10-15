@@ -1,5 +1,4 @@
 package org.launchcode.techjobs.oo;
-import java.util.UUID;
 
 import java.util.Objects;
 
@@ -20,17 +19,21 @@ public class Job {
 
     public Job() {
         this.id = generateUniqueID();
+    }
 
-        //private Integer id;
+    private int generateUniqueID() {
+        return nextId++;
+    }
+    //private Integer id;
 
 //        public void setId(Integer id) {
 //            this.id = Integer.parseInt(UUID.randomUUID().toString());
 //
 //        }
 
-    }
 
-    public Job(String name, String employer, String location, String positionType, String coreCompetency) {
+
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
         this();
         this.name = name;
         this.employer = employer;
@@ -39,6 +42,24 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    @Override
+    public String toString() {
+//        return "\nID: " + id +
+//                "\nName: " + name +
+//                "\nEmployer: " + employer +
+//                "\nLocation: " + location +
+//                "\nPosition Type: " + positionType +
+//                "\nCore Competency: " + coreCompetency +
+//                "\n";
+
+         return System.lineSeparator() +"ID: " + id +
+                 System.lineSeparator() + "Name: " + name +
+                 System.lineSeparator() + "Employer: " + employer +
+                 System.lineSeparator() + "Location: " + location +
+                 System.lineSeparator() + "Position Type: " + positionType +
+                 System.lineSeparator() + "Core Competency: " + coreCompetency +
+                 System.lineSeparator();
+    }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
@@ -49,6 +70,7 @@ public class Job {
         Job job = (Job) o;
         return id == job.id && Objects.equals(name, job.name) && Objects.equals(employer, job.employer) && Objects.equals(location, job.location) && Objects.equals(positionType, job.positionType) && Objects.equals(coreCompetency, job.coreCompetency);
     }
+
 
     @Override
     public int hashCode() {
