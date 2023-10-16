@@ -43,23 +43,59 @@ public class Job {
     }
 
     @Override
-    public String toString() {
-//        return "\nID: " + id +
-//                "\nName: " + name +
-//                "\nEmployer: " + employer +
-//                "\nLocation: " + location +
-//                "\nPosition Type: " + positionType +
-//                "\nCore Competency: " + coreCompetency +
-//                "\n";
 
-         return System.lineSeparator() +"ID: " + id +
-                 System.lineSeparator() + "Name: " + name +
-                 System.lineSeparator() + "Employer: " + employer +
-                 System.lineSeparator() + "Location: " + location +
-                 System.lineSeparator() + "Position Type: " + positionType +
-                 System.lineSeparator() + "Core Competency: " + coreCompetency +
-                 System.lineSeparator();
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(System.lineSeparator());
+        sb.append("ID: ").append(id).append(System.lineSeparator());
+        System.out.println(employer);
+//        System.out.println(employer.equals(""));
+        sb.append("Name: ").append(name.isEmpty() ? "Data not available" : name).append(System.lineSeparator());
+        sb.append("Employer: ").append(employer.getValue().equals("")  ? "Data not available": employer).append(System.lineSeparator());
+        sb.append("Location: ").append(location.getValue().equals("") ?  "Data not available" : location).append(System.lineSeparator());
+        sb.append("Position Type: ").append(positionType.getValue().equals("") ? "Data not available" : positionType).append(System.lineSeparator());
+        sb.append("Core Competency: ").append(coreCompetency.getValue().equals("") ? "Data not available" : coreCompetency).append(System.lineSeparator());
+
+        return sb.toString();
     }
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//
+//        sb.append("ID: ").append(id).append(System.lineSeparator());
+//        sb.append("Name: ").append(name.isEmpty() ? name : "Data not available").append(System.lineSeparator());
+//        sb.append("Employer: ").append(employer == null ? "Data not available" : employer.toString()).append(System.lineSeparator());
+//        sb.append("Location: ").append(location == null ? "Data not available" : location.toString()).append(System.lineSeparator());
+//        sb.append("Position Type: ").append(positionType == null ? "Data not available" : positionType.toString()).append(System.lineSeparator());
+//        sb.append("Core Competency: ").append(coreCompetency == null ? "Data not available" : coreCompetency.toString()).append(System.lineSeparator());
+////        sb.append("Employer: ").append(employer == null ? "Data not available").append(System.lineSeparator());
+////        sb.append("Location: ").append(location == null ? location : "Data not available").append(System.lineSeparator());
+////        sb.append("Position Type: ").append(positionType == null ? positionType : "Data not available").append(System.lineSeparator());
+////        sb.append("Core Competency: ").append(coreCompetency == null ? coreCompetency : "Data not available").append(System.lineSeparator());
+//        return sb.toString();
+//    }
+
+//
+//        System.lineSeparator() + "Name: " + name +
+//                System.lineSeparator() + "Employer: " + employer +
+//                System.lineSeparator() + "Location: " + location +
+//                System.lineSeparator() + "Position Type: " + positionType +
+//                System.lineSeparator() + "Core Competency: " + coreCompetency +
+//                System.lineSeparator();
+//    }
+//         return System.lineSeparator() +"ID: " + id +
+//        if (name.isEmpty()) {
+//            System.out.println(System.lineSeparator() + "Name: Data not available")
+//        } else { System.lineSeparator() + "Name: " + name}
+//
+//        }
+//
+//                 System.lineSeparator() + "Name: " + name +
+//                 System.lineSeparator() + "Employer: " + employer +
+//                 System.lineSeparator() + "Location: " + location +
+//                 System.lineSeparator() + "Position Type: " + positionType +
+//                 System.lineSeparator() + "Core Competency: " + coreCompetency +
+//                 System.lineSeparator();
+//    }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
 
